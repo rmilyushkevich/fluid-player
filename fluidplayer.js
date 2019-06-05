@@ -2162,6 +2162,7 @@ var fluidPlayerClass = {
             '<div class="fluid_controls_right">' +
             '   <div id="' + this.videoPlayerId + '_fluid_control_fullscreen" class="fluid_button fluid_button_fullscreen"></div>' +
             '   <div id="' + this.videoPlayerId + '_fluid_control_theatre" class="fluid_button fluid_button_theatre"></div>' +
+            '   <div id="' + this.videoPlayerId + '_fluid_control_subtitles" class="fluid_button fluid_button_subtitles"></div>' +
             '   <div id="' + this.videoPlayerId + '_fluid_control_video_source" class="fluid_button fluid_button_video_source"></div>' +
             '   <div id="' + this.videoPlayerId + '_fluid_control_playback_rate" class="fluid_button fluid_button_playback_rate"></div>' +
             '   <div id="' + this.videoPlayerId + '_fluid_control_download" class="fluid_button fluid_button_download"></div>' +
@@ -4096,6 +4097,15 @@ var fluidPlayerClass = {
             // No other video sources
             document.getElementById(player.videoPlayerId + '_fluid_control_playback_rate').style.display = 'none';
         }
+    },
+
+    createSubtitlesList: function () {
+        var player = this;
+        var languages = ['en', 'ru', 'pl'];
+        var subtitleChangeList = document.createElement('div');
+        subtitleChangeList.id = player.videoPlayerId + '_fluid_control_subtitles';
+        sourceChangeList.style.display = 'none'; 
+
     },
 
     openCloseVideoPlaybackRate: function() {
